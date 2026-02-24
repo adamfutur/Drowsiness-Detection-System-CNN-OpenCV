@@ -1,5 +1,3 @@
-A "pro" README isn't just about information; it’s about **visual hierarchy, badges, and clean formatting.** I’ve cleaned up your HTML tags, added GitHub-style badges, and structured the sections to look like a high-end open-source project.
-
 
 ---
 
