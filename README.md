@@ -1,26 +1,165 @@
-# Drowsiness-Detection-System-CNN-OpenCV
-System that can detect the drowsiness of drivers using CNN developed in Python - OpenCV, Keras
+# Drowsiness Detection System using CNN & OpenCV
 
-The drowsiness of drivers is one of the main reasons behind road accidents. It is natural for drivers who frequent long routes to doze off when behind the steering wheel. Even stress and lack of sleep can cause drivers to feel drowsy while driving. This project aims to prevent and reduce such accidents by creating a drowsiness detection agent.  
+```{=html}
+<p align="center">
+```
+`<img src="model.png" width="650">`{=html}
+```{=html}
+</p>
+```
+```{=html}
+<p align="center">
+```
+`<b>`{=html}Real-Time Driver Drowsiness Detection using Deep
+Learning`</b>`{=html}
+```{=html}
+</p>
+```
 
-Here, we used Python, OpenCV, and Keras to build a system that can detect the closed eyes of drivers and alert them if ever they fall asleep while driving. Even if the driver’s eyes are closed for a few seconds, this system will immediately inform the driver, thereby preventing terrible road accidents. OpenCV will monitor and collect the driver’s images via a webcam and feed them into the deep learning model that will classify the driver’s eyes as ‘open’ or ‘closed.’
+------------------------------------------------------------------------
+
+## Overview
+
+Driver drowsiness is one of the primary causes of road accidents
+worldwide. Long driving hours, fatigue, stress, and sleep deprivation
+significantly reduce alertness and reaction time.
+
+This project implements a real-time Drowsiness Detection System using:
+
+-   Python\
+-   OpenCV\
+-   Convolutional Neural Networks (CNN)\
+-   Keras (TensorFlow backend)
+
+The system continuously monitors the driver's eyes through a webcam and
+triggers an alert when prolonged eye closure is detected.
+
+------------------------------------------------------------------------
+
+## Key Features
+
+-   Real-time webcam monitoring\
+-   Eye detection using Haar Cascades\
+-   CNN-based eye state classification\
+-   Immediate alert system\
+-   Lightweight and easy to deploy\
+-   Compatible with standard webcams
+
+------------------------------------------------------------------------
+
+## System Workflow
+
+1.  Webcam captures live video feed.\
+2.  OpenCV detects face and extracts eye regions.\
+3.  The CNN model classifies each eye as Open or Closed.\
+4.  If eyes remain closed beyond a defined threshold, an alarm is
+    triggered.
+
+------------------------------------------------------------------------
 
 ## Dataset
-The dataset used is a subset of a dataset from [Kaggle](https://www.kaggle.com/serenaraju/yawn-eye-dataset-new)
+
+The model is trained on a subset of the following Kaggle dataset:
+
+https://www.kaggle.com/serenaraju/yawn-eye-dataset-new
+
+The dataset contains labeled images for:
+
+-   Open Eyes\
+-   Closed Eyes
+
+------------------------------------------------------------------------
 
 ## Model Architecture
-![Model](model.png)
 
-## Steps to execute
-### Step 1
+```{=html}
+<p align="center">
 ```
+`<img src="model.png" width="750">`{=html}
+```{=html}
+</p>
+```
+The CNN architecture consists of:
+
+-   Convolution Layers\
+-   ReLU Activation\
+-   MaxPooling Layers\
+-   Fully Connected Layers\
+-   Softmax Output Layer
+
+------------------------------------------------------------------------
+
+## Installation & Setup
+
+### Step 1 --- Clone the Repository
+
+``` bash
 git clone https://github.com/adamfutur/Drowsiness-Detection-System-CNN-OpenCV.git
 ```
-### Step 2
-```
+
+### Step 2 --- Navigate to Project Directory
+
+``` bash
 cd Drowsiness-Detection-System-CNN-OpenCV
 ```
-### Step 3
+
+### Step 3 --- Install Required Dependencies
+
+``` bash
+pip install -r requirements.txt
 ```
+
+If requirements.txt is not available:
+
+``` bash
+pip install opencv-python keras tensorflow numpy pygame
+```
+
+------------------------------------------------------------------------
+
+## Run the Application
+
+``` bash
 python detect_drowsiness.py
 ```
+
+Make sure your webcam is connected before running the script.
+
+------------------------------------------------------------------------
+
+## Project Structure
+
+    Drowsiness-Detection-System-CNN-OpenCV/
+    │
+    ├── dataset/
+    ├── models/
+    ├── detect_drowsiness.py
+    ├── model.h5
+    ├── alarm.wav
+    ├── model.png
+    └── README.md
+
+------------------------------------------------------------------------
+
+## Requirements
+
+-   Python 3.7+
+-   OpenCV
+-   TensorFlow / Keras
+-   NumPy
+-   Pygame
+
+------------------------------------------------------------------------
+
+## Future Improvements
+
+-   Improve accuracy using larger datasets\
+-   Add head pose estimation\
+-   Deploy as a mobile or embedded system application\
+-   Integrate with vehicle safety systems
+
+------------------------------------------------------------------------
+
+## License
+
+This project is open-source and available under the MIT License.
