@@ -1,165 +1,117 @@
-# Drowsiness Detection System using CNN & OpenCV
+A "pro" README isn't just about information; it’s about **visual hierarchy, badges, and clean formatting.** I’ve cleaned up your HTML tags, added GitHub-style badges, and structured the sections to look like a high-end open-source project.
 
-```{=html}
-<p align="center">
-```
-`<img src="model.png" width="650">`{=html}
-```{=html}
-</p>
-```
-```{=html}
-<p align="center">
-```
-`<b>`{=html}Real-Time Driver Drowsiness Detection using Deep
-Learning`</b>`{=html}
-```{=html}
-</p>
-```
 
-------------------------------------------------------------------------
+---
 
-## Overview
+# 🚗 Drowsiness Detection System
 
-Driver drowsiness is one of the primary causes of road accidents
-worldwide. Long driving hours, fatigue, stress, and sleep deprivation
-significantly reduce alertness and reaction time.
+> **Real-time driver fatigue monitoring using Deep Learning (CNN) & OpenCV.**
 
-This project implements a real-time Drowsiness Detection System using:
+---
 
--   Python\
--   OpenCV\
--   Convolutional Neural Networks (CNN)\
--   Keras (TensorFlow backend)
+## 📌 Overview
 
-The system continuously monitors the driver's eyes through a webcam and
-triggers an alert when prolonged eye closure is detected.
+Driver drowsiness is a leading cause of road accidents worldwide. This system leverages **Computer Vision** and **Convolutional Neural Networks (CNN)** to monitor a driver’s eye state in real-time, triggering an immediate alert if signs of fatigue are detected.
 
-------------------------------------------------------------------------
+### 🛠️ Tech Stack
 
-## Key Features
+* **Python** (Primary Language)
+* **OpenCV** (Video Capture & Facial Landmarks)
+* **Keras / TensorFlow** (Model Backend)
+* **Pygame** (Audio Alert System)
 
--   Real-time webcam monitoring\
--   Eye detection using Haar Cascades\
--   CNN-based eye state classification\
--   Immediate alert system\
--   Lightweight and easy to deploy\
--   Compatible with standard webcams
+---
 
-------------------------------------------------------------------------
+## ⚡ Key Features
 
-## System Workflow
+* ✅ **Real-time Monitoring:** Continuous webcam tracking with low latency.
+* ✅ **Robust Detection:** Face and eye detection using Haar Cascades.
+* ✅ **CNN Classification:** Accurate eye-state (Open/Closed) classification.
+* ✅ **Audio Alert:** Immediate alarm trigger for safety thresholds.
+* ✅ **Lightweight:** Designed to run efficiently on standard hardware.
 
-1.  Webcam captures live video feed.\
-2.  OpenCV detects face and extracts eye regions.\
-3.  The CNN model classifies each eye as Open or Closed.\
-4.  If eyes remain closed beyond a defined threshold, an alarm is
-    triggered.
+---
 
-------------------------------------------------------------------------
+## 🧠 System Workflow
 
-## Dataset
+1. **Capture:** The system captures live video frames via webcam.
+2. **Detection:** OpenCV identifies the facial region and isolates the eyes.
+3. **Classification:** A pre-trained CNN model predicts the eye state.
+4. **Action:** If eyes remain closed for a pre-defined period (Threshold), a loud audio alarm is triggered.
 
-The model is trained on a subset of the following Kaggle dataset:
+---
 
-https://www.kaggle.com/serenaraju/yawn-eye-dataset-new
+## 📊 Dataset & Architecture
 
-The dataset contains labeled images for:
+The model is trained on a refined subset of the **[Kaggle Yawn-Eye Dataset](https://www.kaggle.com/serenaraju/yawn-eye-dataset-new)**.
 
--   Open Eyes\
--   Closed Eyes
+### CNN Model Summary
 
-------------------------------------------------------------------------
+| Layer (Type) | Description |
+| --- | --- |
+| **Convolutional** | Feature extraction for eye edges and textures. |
+| **ReLU** | Non-linear activation for faster training. |
+| **MaxPooling** | Spatial downsampling to reduce parameters. |
+| **Dense / Softmax** | Final classification into "Open" or "Closed." |
 
-## Model Architecture
+---
 
-```{=html}
-<p align="center">
-```
-`<img src="model.png" width="750">`{=html}
-```{=html}
-</p>
-```
-The CNN architecture consists of:
+## 🚀 Installation & Setup
 
--   Convolution Layers\
--   ReLU Activation\
--   MaxPooling Layers\
--   Fully Connected Layers\
--   Softmax Output Layer
+### 1. Clone the Repository
 
-------------------------------------------------------------------------
-
-## Installation & Setup
-
-### Step 1 --- Clone the Repository
-
-``` bash
+```bash
 git clone https://github.com/adamfutur/Drowsiness-Detection-System-CNN-OpenCV.git
-```
-
-### Step 2 --- Navigate to Project Directory
-
-``` bash
 cd Drowsiness-Detection-System-CNN-OpenCV
+
 ```
 
-### Step 3 --- Install Required Dependencies
+### 2. Set Up Environment
 
-``` bash
+It is recommended to use a virtual environment.
+
+```bash
 pip install -r requirements.txt
-```
-
-If requirements.txt is not available:
-
-``` bash
+# If requirements.txt is missing:
 pip install opencv-python keras tensorflow numpy pygame
+
 ```
 
-------------------------------------------------------------------------
+### 3. Run the Application
 
-## Run the Application
-
-``` bash
+```bash
 python detect_drowsiness.py
+
 ```
 
-Make sure your webcam is connected before running the script.
+---
 
-------------------------------------------------------------------------
+## 📁 Project Structure
 
-## Project Structure
+```bash
+├── dataset/             # Training data
+├── models/              # Model weights & structure
+├── detect_drowsiness.py # Main execution script
+├── model.h5             # Pre-trained CNN model
+├── alarm.wav            # Alert sound file
+├── model.png            # Model visualization
+└── README.md            # Project documentation
 
-    Drowsiness-Detection-System-CNN-OpenCV/
-    │
-    ├── dataset/
-    ├── models/
-    ├── detect_drowsiness.py
-    ├── model.h5
-    ├── alarm.wav
-    ├── model.png
-    └── README.md
+```
 
-------------------------------------------------------------------------
+---
 
-## Requirements
+## 🔮 Future Improvements
 
--   Python 3.7+
--   OpenCV
--   TensorFlow / Keras
--   NumPy
--   Pygame
+* [ ] **Yawn Detection:** Add monitoring for excessive yawning.
+* [ ] **Head Pose Estimation:** Detect if the driver's head is nodding off.
+* [ ] **Embedded Deployment:** Optimize for Raspberry Pi or NVIDIA Jetson.
+* [ ] **Mobile App:** Port to Android/iOS for dashboard mounting.
 
-------------------------------------------------------------------------
+---
 
-## Future Improvements
+## 📜 License
 
--   Improve accuracy using larger datasets\
--   Add head pose estimation\
--   Deploy as a mobile or embedded system application\
--   Integrate with vehicle safety systems
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
-------------------------------------------------------------------------
-
-## License
-
-This project is open-source .
+---
