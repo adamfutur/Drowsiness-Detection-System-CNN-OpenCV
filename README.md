@@ -162,4 +162,4 @@ Make sure your webcam is connected before running the script.
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source .
